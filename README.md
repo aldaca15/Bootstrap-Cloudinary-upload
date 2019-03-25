@@ -1,10 +1,10 @@
 # Bootstrap Cloudinary upload
 
-A javascript functionality which helps you to accelerate the integration of Cloudinary in any new Bootstrap project. Based on [Bootstrap 4 Boilerplate](https://github.com/tomcatbuzz/Bootstrap-4-Boilerplate) and [Cloudinary samples](https://codepen.io/team/Cloudinary/pen/QgpyOK)
+A javascript functionality which helps you to accelerate the integration of Cloudinary in any new Bootstrap project. Based on [Bootstrap 4 Boilerplate](https://github.com/tomcatbuzz/Bootstrap-4-Boilerplate) and [Cloudinary samples.](https://codepen.io/team/Cloudinary/pen/QgpyOK)
 
 ## Usage
 
-Make sure to import the bootstrap-cloudinary.js file in your bootstrap project and declare the constants about the cloudName and unsignedUploadPreset from cloudinary. Then, create modal to start image upload by declaring:
+Make sure to import the bootstrap-cloudinary.js file in your bootstrap project and declare the constants "cloudName" and "unsignedUploadPreset" from cloudinary. Then, create modal to start image upload by declaring:
 
 ```
 cloudinayModal("Modal title", "Cancel button title", "Help text", "Helper button text");
