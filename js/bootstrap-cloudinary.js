@@ -2,10 +2,11 @@
  * @description a javascript functionality which helps you to accelerate the integration of Cloudinary in your Bootstrap project.
  * Functionality ready to use, just remember to setup your constant of cloudName and unsignedUploadPreset in the index.html
  * @author Ali Adame
- * @version 0.1
- * @date 24-03-2019
+ * @version 0.2
+ * @date 26-03-2019
  * **/
 const javascriptDebugging = false;
+var initModal = false;
 	
 // Handle selected files
 var handleFiles = function(files) {
@@ -97,10 +98,10 @@ function doDrop(event) {
  * @return void, will display the modal
  * @date 24-03-2019
  * **/
-function cloudinayModal(title, titleBtnCancel, supportText, manualHelperName) {
+function cloudinaryModal(title, titleBtnCancel, supportText, manualHelperName) {
 	
 	// Creates modal
-  	var cloudinayModal = $('<div class="modal fade" id="modal_confirm" tabindex="-1" role="dialog" aria-labelledby="modalCloudinary" aria-hidden="true">' +
+  	var cloudLoadModal = $('<div class="modal fade" id="cloudinaryModal" tabindex="-1" role="dialog" aria-labelledby="modalCloudinary" aria-hidden="true">' +
   				'<div class="modal-dialog">'+
       				'<div class="modal-content">'+
           				'<div class="modal-header">' +
@@ -109,7 +110,6 @@ function cloudinayModal(title, titleBtnCancel, supportText, manualHelperName) {
 						'</div>' +
 						'<div class="modal-body">' +
 							'<div class="row">' +
-								'<input type="hidden" id="cloudinaryLoadedImg">' +
 								'<div class="col-sm-12 col-md-12 col-lg-12">' +
 									'<div id="dropboxFileUpload" ondragenter="event.stopPropagation(); event.preventDefault();" ondragover="event.stopPropagation(); event.preventDefault();" ondrop="event.stopPropagation(); event.preventDefault(); doDrop(event);" class="">' +
 										'<form class="my-form">' +
@@ -117,8 +117,10 @@ function cloudinayModal(title, titleBtnCancel, supportText, manualHelperName) {
 												'<h4>' + supportText + '</h4>' +
 												'<div class="form_controls">' +
 													'<div class="upload_button_holder">' +
-														'<input type="file" id="fileElem" multiple accept="image/*" style="display:none" onchange="handleFiles(this.files)">' +
-														'<button id="fileSelect" type="button" class="btn btn-md btn-primary">' + manualHelperName + '</button>' +
+														'<div style="display: block; width: 100px; height: 20px; overflow: hidden;">' +
+														'<button style="width: 110px; height: 30px; position: relative; top: -5px; left: -5px; cursor: pointer;"><a href="javascript: void(0)">' + manualHelperName + '</a></button>' +
+														'<input type="file" value="hola" multiple accept="image/*" id="" name="" onchange="handleFiles(this.files)" style="font-size: 50px; width: 120px; opacity: 0; filter:alpha(opacity=0); position: relative; top: -40px;; left: -20px" />' +
+														'</div>' +
 													'</div>' +
 												'</div>' +
 											'</div>' +
@@ -137,13 +139,11 @@ function cloudinayModal(title, titleBtnCancel, supportText, manualHelperName) {
 					'</div>'+//modal content
 				'</div>' +//modal dialog
 			'</div>');//modal
-    cloudinayModal.modal('show');
+	if(!initModal) {
+		cloudLoadModal.modal('show');
+		initModal = true;
+	} else {
+		$('#cloudinaryModal').modal('show');
+	}	
 	
-	// Drag, drop and other actions over file select
-	$(document).on("click","#fileSelect",function(e) {
-		if ($("#fileElem").length) {
-			$("#fileElem").click();
-		}
-		e.preventDefault(); // prevent navigation to "#"
-	});
 }

@@ -7,7 +7,7 @@ A javascript functionality which helps you to accelerate the integration of Clou
 Make sure to import the bootstrap-cloudinary.js file in your bootstrap project and declare the constants "cloudName" and "unsignedUploadPreset" from cloudinary. Then, create modal to start image upload by declaring:
 
 ```
-cloudinayModal("Modal title", "Cancel button title", "Help text", "Helper button text");
+cloudinayModal("Modal title", "Cancel button value", "Help text", "Select button value");
 ```
 
 ## Built With

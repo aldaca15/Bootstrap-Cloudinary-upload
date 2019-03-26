@@ -68,9 +68,10 @@
         <h1>Bootstrap Cloudinary upload</h1>
 		<p class="lead">A javascript functionality which helps you to accelerate the integration of <a href="https://cloudinary.com/solutions/image_management" target="_blank">Cloudinary</a> in any new <a href="https://getbootstrap.com/docs/4.0/getting-started/introduction/" target="_blank">Bootstrap</a> project.<br>
         This sample works upon the <a href="https://github.com/tomcatbuzz/Bootstrap-4-Boilerplate" target="_blank">Bootstrap 4 Boilerplate</a>.</p>
-		<button type="button" class="btn btn-md btn-primary" onclick='cloudinayModal("Image upload", "Cancel", "Upload multiple files using the select assistant or by doing drag and drop within the dashed area", "Select Assistant");'>Cloudinary images upload</button>
+		<button type="button" class="btn btn-md btn-primary" onclick='cloudinaryModal("Image upload", "Cancel", "Upload multiple files using the select button or by doing drag and drop within the dashed area.", "Select");'>Cloudinary images upload</button>
 		<p class="lead">The uploaded file url will be "saved" to the "cloudinaryLoadedImg" hidden input. Based on the "pure JS Cloudinary sample" at <a href="https://codepen.io/team/Cloudinary/pen/QgpyOK" target="_blank">codepen</a></p>
       </div>
+	  <input type="hidden" id="cloudinaryLoadedImg">
 
     </main><!-- /.container -->
 
@@ -84,7 +85,7 @@
 	<script src="js/bootstrap-cloudinary.js"></script>
 	<script type="text/javascript">
 		// Sample initialization
-		cloudinayModal("Image upload", "Cancel", "Upload multiple files using the select assistant or by doing drag and drop within the dashed area", "Select Assistant");
+		cloudinaryModal("Image upload", "Cancel", "Upload multiple files using the select button or by doing drag and drop within the dashed area.", "Select");
 	</script>
   </body>
 </html>
